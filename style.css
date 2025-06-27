@@ -1,39 +1,58 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* --- Reset & base --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
-  background: #f0f0f0;
+  background: #f5f7fa;
   color: #333;
-  padding: 20px;
+  padding: 0 1rem 3rem;
 }
 
-header {
-  background: #333;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
+/* --- Layout helpers --- */
+header, main, footer { max-width: 960px; margin: auto; }
 
-nav a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-main {
+.card {
   background: #fff;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
 }
 
+/* --- Header --- */
+header {
+  text-align: center;
+  padding: 2.5rem 0 1.5rem;
+}
+
+header h1 { font-size: 2.25rem; letter-spacing: .5px; }
+.tagline { margin: .5rem 0 1.25rem; font-size: 1rem; color: #666; }
+
+/* Navigation */
+nav a {
+  display: inline-block;
+  margin: 0 .75rem;
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover { text-decoration: underline; }
+
+/* --- Sections --- */
+h2 { margin-bottom: .75rem; font-size: 1.5rem; color: #0077cc; }
+ul { list-style: disc inside; margin-left: .5rem; }
+li { margin: .4rem 0; }
+.coverage {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #444;
+}
+
+/* --- Footer --- */
 footer {
   text-align: center;
-  margin-top: 40px;
-  color: #666;
+  margin-top: 2.5rem;
+  color: #777;
+  font-size: .9rem;
 }
