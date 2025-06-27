@@ -1,58 +1,99 @@
-/* --- Reset & base --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --blue: #007BFF;
+  --light-blue: #E9F2FF;
+  --white: #fff;
+  --dark: #333;
+  --text-muted: #666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light-blue);
+  color: var(--dark);
   line-height: 1.6;
-  background: #f5f7fa;
-  color: #333;
-  padding: 0 1rem 3rem;
 }
 
-/* --- Layout helpers --- */
-header, main, footer { max-width: 960px; margin: auto; }
-
-.card {
-  background: #fff;
+.container {
+  max-width: 960px;
+  margin: auto;
   padding: 1.5rem;
-  margin-top: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.08);
 }
 
-/* --- Header --- */
+/* Header */
 header {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 2rem 0;
   text-align: center;
-  padding: 2.5rem 0 1.5rem;
+  border-bottom: 4px solid #0056b3;
 }
 
-header h1 { font-size: 2.25rem; letter-spacing: .5px; }
-.tagline { margin: .5rem 0 1.25rem; font-size: 1rem; color: #666; }
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+}
 
-/* Navigation */
+header .tagline {
+  font-size: 1rem;
+  color: #dceaff;
+  margin-bottom: 1rem;
+}
+
 nav a {
-  display: inline-block;
-  margin: 0 .75rem;
-  color: #0077cc;
+  color: var(--white);
   text-decoration: none;
+  margin: 0 1rem;
   font-weight: 500;
 }
-nav a:hover { text-decoration: underline; }
 
-/* --- Sections --- */
-h2 { margin-bottom: .75rem; font-size: 1.5rem; color: #0077cc; }
-ul { list-style: disc inside; margin-left: .5rem; }
-li { margin: .4rem 0; }
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+main {
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: var(--blue);
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
 .coverage {
   margin-top: 1rem;
   font-style: italic;
-  color: #444;
+  color: var(--text-muted);
 }
 
-/* --- Footer --- */
+/* Footer */
 footer {
+  background: #f0f4fa;
   text-align: center;
-  margin-top: 2.5rem;
-  color: #777;
-  font-size: .9rem;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
