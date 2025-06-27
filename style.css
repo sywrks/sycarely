@@ -23,7 +23,7 @@ body {
   line-height: 1.6;
 }
 
-/* Layout container */
+/* Container */
 .container {
   max-width: 960px;
   margin: auto;
@@ -51,23 +51,22 @@ nav a:hover {
   opacity: 0.8;
 }
 
-/* Hero section */
+/* Hero */
 .hero {
-  background: url('https://images.unsplash.com/photo-1588776814546-ec7bb97c5b28?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  background: url('https://images.unsplash.com/photo-1588776814546-ec7bb97c5b28?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
   height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--white);
-  position: relative;
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
   padding: 2rem;
   border-radius: var(--radius);
-  animation: fadeIn 1.5s ease-in-out;
+  animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 .hero h1 {
@@ -110,7 +109,7 @@ h2 {
 
 /* Lists */
 ul {
-  list-style-type: disc;
+  list-style: disc;
   padding-left: 1.5rem;
 }
 
@@ -118,20 +117,10 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/* Text styles */
 .coverage {
   margin-top: 1rem;
   font-style: italic;
   color: var(--text-muted);
-}
-
-a {
-  color: var(--blue-dark);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 /* Footer */
@@ -144,35 +133,43 @@ footer {
   margin-top: 2rem;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* WhatsApp Floating Button */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+  z-index: 1000;
 }
 
-/* Responsive Design */
+.whatsapp-button svg {
+  display: block;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero-tagline {
-    font-size: 1rem;
-  }
-
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
-
-  .cta-button {
-    font-size: 1rem;
-    padding: 0.6rem 1.2rem;
-  }
+  .hero h1       { font-size: 2rem; }
+  .hero-tagline  { font-size: 1rem; }
+  nav a          { display: block; margin: 0.5rem 0; }
+  .cta-button    { font-size: 1rem; padding: 0.6rem 1.2rem; }
 }
