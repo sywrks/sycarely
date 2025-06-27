@@ -1,9 +1,13 @@
 :root {
   --blue: #007BFF;
-  --light-blue: #E9F2FF;
-  --white: #fff;
-  --dark: #333;
+  --blue-dark: #0056b3;
+  --light-blue: #e9f2ff;
+  --white: #ffffff;
+  --gray: #f8f9fa;
+  --text-dark: #333;
   --text-muted: #666;
+  --shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+  --radius: 12px;
 }
 
 * {
@@ -15,34 +19,24 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background: var(--light-blue);
-  color: var(--dark);
+  color: var(--text-dark);
   line-height: 1.6;
 }
 
+/* Layout container */
 .container {
   max-width: 960px;
   margin: auto;
   padding: 1.5rem;
 }
 
-/* Header */
+/* Navigation */
 header {
   background-color: var(--blue);
   color: var(--white);
-  padding: 2rem 0;
+  padding: 1rem 0;
   text-align: center;
-  border-bottom: 4px solid #0056b3;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.25rem;
-}
-
-header .tagline {
-  font-size: 1rem;
-  color: #dceaff;
-  margin-bottom: 1rem;
+  border-bottom: 4px solid var(--blue-dark);
 }
 
 nav a {
@@ -50,23 +44,63 @@ nav a {
   text-decoration: none;
   margin: 0 1rem;
   font-weight: 500;
+  transition: opacity 0.2s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
-/* Main content */
-main {
-  margin-top: 2rem;
+/* Hero section */
+.hero {
+  background: url('https://images.unsplash.com/photo-1588776814546-ec7bb97c5b28?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  position: relative;
 }
 
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: var(--radius);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--blue-dark);
+}
+
+/* Cards */
 .card {
   background: var(--white);
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: var(--radius);
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+  box-shadow: var(--shadow);
 }
 
 h2 {
@@ -74,6 +108,7 @@ h2 {
   color: var(--blue);
 }
 
+/* Lists */
 ul {
   list-style-type: disc;
   padding-left: 1.5rem;
@@ -83,17 +118,61 @@ li {
   margin-bottom: 0.5rem;
 }
 
+/* Text styles */
 .coverage {
   margin-top: 1rem;
   font-style: italic;
   color: var(--text-muted);
 }
 
+a {
+  color: var(--blue-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* Footer */
 footer {
-  background: #f0f4fa;
+  background: var(--gray);
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
   color: var(--text-muted);
+  margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
 }
